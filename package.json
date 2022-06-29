@@ -1,0 +1,24 @@
+{
+  "name": "site-josy",
+  "version": "1.0.0",
+  "description": "Site para registrar conteúdos sobre livros e leituras",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andre-SMedina/Site-Josy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andre-SMedina/Site-Josy/issues"
+  },
+  "homepage": "https://github.com/Andre-SMedina/Site-Josy#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
