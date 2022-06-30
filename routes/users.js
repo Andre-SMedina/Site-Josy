@@ -10,7 +10,6 @@ router.post("/cadastro/save", async (req, res) => {
   let alert = "";
   const { name, email, senha, senha2 } = req.body;
   const consult = await CadModel.findOne({ email: email });
-  console.log(name);
 
   if (!name || !email || !senha || !senha2) {
     alert = "Preencha todos os campos!";
@@ -35,7 +34,6 @@ router.post("/login/load", async (req, res) => {
   let alert = "";
   const { email, senha } = req.body;
   const consult = await CadModel.findOne({ email: email });
-
 
   if (!email || !senha) {
     alert = "Preencha todos os campos!";

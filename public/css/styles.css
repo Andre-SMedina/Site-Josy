@@ -12,6 +12,12 @@ header {
   background-color: rgb(145, 232, 232);
   text-align: center;
 }
+header img {
+  position: absolute;
+  left: 40px;
+  top: 15px;
+  width: 50px;
+}
 header span {
   color: rgb(226, 43, 98);
   font-family: "Permanent Marker", cursive;
@@ -74,6 +80,25 @@ main {
   color: rgb(255, 255, 255);
   background: red;
   text-align: center;
+}
+.imagens {
+  background-color: rgb(249, 243, 212);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.imagens figure {
+  width: 200px;
+  border: 2px solid;
+  box-shadow: 10px 10px 10px black;
+}
+.imagens img {
+  width: 100%;
 }
 /* --------------------------------- FOOTER */
 
