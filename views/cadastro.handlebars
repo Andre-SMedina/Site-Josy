@@ -1,0 +1,27 @@
+<section class="cadastro">
+  <h2>Cadastro</h2>
+  <form action="/cadastro/save" method="POST">
+    <div class="cadastro_div">
+      <label>Nome:</label>
+      <input type="text" name="name" placeholder="Digite seu nome" />
+    </div>
+    <div class="cadastro_div">
+      <label>E-mail:</label>
+      <input type="email" name="email" placeholder="Digite seu e-mail" />
+    </div>
+    <div class="cadastro_div">
+      <label>Senha:</label>
+      <input type="password" name="senha" placeholder="Digite sua senha" />
+    </div>
+    <div class="cadastro_div">
+      <label>Confirmar senha: </label>
+      <input
+        type="password"
+        name="senha2"
+        placeholder="Digite sua senha novamente"
+      />
+    </div>
+    <input id="btn" type="submit" value="Cadastrar" />
+    <p class="verificaCad">{{alert}}</p>
+  </form>
+</section>
