@@ -100,6 +100,63 @@ main {
 .imagens img {
   width: 100%;
 }
+#painel {
+  display: flex;
+  /* background-color: yellow; */
+}
+/* --------------------------------- MENU */
+
+#menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+#menu li {
+  background-color: black;
+  text-align: center;
+  position: relative;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 10px;
+}
+#menu a {
+  background-color: transparent;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+#menu ul li ul {
+  /* z-index: -1; */
+  /* background-color: transparent; */
+  overflow: hidden;
+  position: absolute;
+  top: 15%;
+  left: 101%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s all ease-in-out;
+}
+#menu ul li ul li {
+  /* background-color: black; */
+  padding: 5px 25px;
+}
+#menu ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
+#menu ul li:hover {
+  /* background-color: rgb(49, 48, 48); */
+  background-color: rgb(88, 10, 109);
+}
+
+/* --------------------------------- CONTEUDO */
+
+#conteudo {
+  background-color: rgb(252, 252, 230);
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+}
+
 /* --------------------------------- FOOTER */
 
 footer {

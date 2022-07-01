@@ -1,0 +1,38 @@
+<script>
+  document.querySelector('#login_cad').style.visibility = 'hidden';
+  document.querySelector('#linkMain').href = '/painel/{{id}}';
+  const log = document.querySelector('#login_log');
+
+  log.innerHTML = '<a href="/">Olá {{name}}</a>'
+</script>
+
+<section id="painel">
+
+    <nav id="menu">
+        <ul class="menu_ul1">
+            <a href="/painel/{{id}}/resenhas"><li>Resenhas
+                <ul class="menu_ul2">
+                    <li>Ver</li>
+                    <li>Cadastrar</li>
+                    <li>Editar</li>
+                    <li>Apagar</li>
+                </ul>
+            </li></a>
+            <a href="#"><li>Leituras
+                <ul class="menu_ul2">
+                    <li>Ver</li>
+                    <li>Cadastrar</li>
+                    <li>Editar</li>
+                    <li>Apagar</li>
+                </ul>
+            </li></a>
+            <a href="#"><li>Desejos</li></a>
+            <a href="#"><li>Adiquiridos</li></a>
+        </ul>
+    </nav>
+
+    <article id="conteudo">
+
+    </article>
+
+</section>

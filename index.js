@@ -1,8 +1,10 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const usersRouter = require("./routes/users");
+const painelRouter = require("./routes/painel");
 const dotenv = require("dotenv");
 const connectToDatabase = require("./database/connect");
+const { model, models } = require("mongoose");
 const app = express();
 const hbs = exphbs.create({ partialsDir: ["views/partials"] });
 const port = 3000;
@@ -15,8 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 connectToDatabase();
 
-app.use("/", usersRouter);
-
+app.use("/user", usersRouter);
+app.use("/painel", painelRouter);
 
 app.get("/", (req, res) => {
   res.render("home");

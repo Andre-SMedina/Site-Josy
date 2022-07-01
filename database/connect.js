@@ -13,4 +13,3 @@ const connectToDatabase = async () => {
 };
 
 module.exports = connectToDatabase;
-// `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cadastro.mixqe8i.mongodb.net/?retryWrites=true&w=majority`;

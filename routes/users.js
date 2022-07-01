@@ -1,5 +1,4 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 const CadModel = require("../database/models/cadastro.model");
 
 router.get("/cadastro", (req, res) => {
@@ -42,7 +41,7 @@ router.post("/login/load", async (req, res) => {
   } else if (consult.senha != senha) {
     alert = "Senha incorreta!";
   } else {
-    alert = "Login realizado com sucesso!";
+    return res.redirect(`/painel/${consult.id}`);
   }
   res.render("login", { alert });
 });
