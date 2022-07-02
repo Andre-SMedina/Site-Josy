@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 
 const cadSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  senha: { type: String, required: true, minlength: 7 },
+  name: { type: String },
+  email: { type: String },
+  senha: { type: String, minlength: 7 },
+  resenhas: [],
 });
 
 const CadModel = mongoose.model("Registration", cadSchema);

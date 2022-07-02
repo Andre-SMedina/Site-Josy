@@ -1,27 +1,27 @@
 <section class="cadastro">
   <h2>Cadastro</h2>
   <form action="/user/cadastro/save" method="POST">
-    <div class="cadastro_div">
+    <div class="input_div">
       <label>Nome:</label>
-      <input type="text" name="name" placeholder="Digite seu primeiro nome" />
+      <input type="text" name="name" placeholder="Digite seu nome" maxlength="50" />
     </div>
-    <div class="cadastro_div">
+    <div class="input_div">
       <label>E-mail:</label>
-      <input type="email" name="email" placeholder="Digite seu e-mail" />
+      <input type="email" name="email" placeholder="Digite seu e-mail" maxlength="40" />
     </div>
-    <div class="cadastro_div">
+    <div class="input_div">
       <label>Senha:</label>
-      <input type="password" name="senha" placeholder="Digite sua senha" />
+      <input type="password" name="senha" placeholder="Digite sua senha" maxlength="15" />
     </div>
-    <div class="cadastro_div">
+    <div class="input_div">
       <label>Confirmar senha: </label>
       <input
         type="password"
         name="senha2"
-        placeholder="Digite sua senha novamente"
+        placeholder="Digite sua senha novamente"  maxlength="15"
       />
     </div>
-    <input id="btn" type="submit" value="Cadastrar" />
-    <p class="verificaCad">{{alert}}</p>
+    <input class="btn" type="submit" value="Cadastrar" />
+    <p class="alerta">{{alert}}</p>
   </form>
 </section>

@@ -1,15 +1,15 @@
 <section class="cadastro">
   <h2>Login</h2>
   <form action="/user/login/load" method="POST">
-    <div class="cadastro_div">
+    <div class="input_div">
       <label>E-mail:</label>
-      <input type="email" name="email" placeholder="Digite seu e-mail" />
+      <input type="email" name="email" placeholder="Digite seu e-mail" maxlength="40" />
     </div>
-    <div class="cadastro_div">
+    <div class="input_div">
       <label>Senha:</label>
-      <input type="password" name="senha" placeholder="Digite sua senha" />
+      <input type="password" name="senha" placeholder="Digite sua senha" maxlength="15" />
     </div>
-    <input id="btn" type="submit" value="Entrar" />
-    <p class="verificaCad">{{alert}}</p>
+    <input class="btn" type="submit" value="Entrar" />
+    <p class="alerta">{{alert}}</p>
   </form>
 </section>

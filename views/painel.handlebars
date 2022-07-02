@@ -10,29 +10,56 @@
 
     <nav id="menu">
         <ul class="menu_ul1">
-            <a href="/painel/{{id}}/resenhas"><li>Resenhas
+            <li>Resenhas
                 <ul class="menu_ul2">
                     <li>Ver</li>
-                    <li>Cadastrar</li>
-                    <li>Editar</li>
+                    <a href="/painel/{{id}}/resenhas/criar"><li>Criar</li></a>
+                    <a href="/painel/{{id}}/resenhas/editar"><li>Editar</li></a>
                     <li>Apagar</li>
                 </ul>
-            </li></a>
-            <a href="#"><li>Leituras
+            </li>
+            <li>Leituras
                 <ul class="menu_ul2">
-                    <li>Ver</li>
-                    <li>Cadastrar</li>
                     <li>Editar</li>
-                    <li>Apagar</li>
+                    <li>Atuais</li>
+                    <li>Concluídas</li>
+                    <li>Próximas</li>
                 </ul>
-            </li></a>
-            <a href="#"><li>Desejos</li></a>
-            <a href="#"><li>Adiquiridos</li></a>
+            </li>
+            <li>Desejos</li>
+            <li>Adiquiridos</li>
         </ul>
     </nav>
 
-    <article id="conteudo">
-
-    </article>
+    <section id="conteudo">
+        {{#if resCriar}}
+        <div class="resenha_criar">
+        <h1>Criar Resenha</h1>
+        <form action="/painel/{{id}}/resenhas/criar/save" method="POST">
+            <div id="resTit" class="input_div">                
+                <label>Livro:</label>
+                <input type="text" name="livro" placeholder="Título do livro" maxlength="50">
+            </div>
+            <p class="alerta">{{alert}}</p>
+            <textarea name="resenha" cols="80" rows="10" maxlength="2500" placeholder="Insira sua resenha aqui"></textarea>
+            <input class="btn" type="submit" value="Criar">
+        </form>
+        </div>
+        {{/if}}
+        
+        {{#if resEditar}}
+        <div class="resenha_criar">
+        <h1>Editar Resenha</h1>
+        <form action="/painel/{{id}}/resenhas/editar/save" method="POST">
+            <div id="resTit" class="input_div">                
+                <label>Livro:</label>
+                <input type="text" name="livro" placeholder="Título do livro" maxlength="50">                
+            </div>
+            <p class="alerta">{{alert}}</p>
+            <textarea name="resenha" cols="80" rows="10" maxlength="2500"></textarea>
+            <input class="btn" type="submit" value="Editar"></form>
+        </div>
+        {{/if}}
+    </section>
 
 </section>
