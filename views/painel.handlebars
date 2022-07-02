@@ -12,7 +12,7 @@
         <ul class="menu_ul1">
             <li>Resenhas
                 <ul class="menu_ul2">
-                    <li>Ver</li>
+                    <a href="/painel/{{id}}/resenhas/ver"><li>Ver</li></a>
                     <a href="/painel/{{id}}/resenhas/criar"><li>Criar</li></a>
                     <a href="/painel/{{id}}/resenhas/editar"><li>Editar</li></a>
                     <li>Apagar</li>
@@ -51,15 +51,39 @@
         <div class="resenha_criar">
         <h1>Editar Resenha</h1>
         <form action="/painel/{{id}}/resenhas/editar/save" method="POST">
-            <div id="resTit" class="input_div">                
+            <div id="resTit" class="input_div">  
                 <label>Livro:</label>
-                <input type="text" name="livro" placeholder="Título do livro" maxlength="50">                
+                <select name="select" clas="selectResenha">
+                    <option value="teste">teste</option>
+                    <option value="teste1">teste1</option>
+                    <option value="teste2">teste2</option>
+                </select>              
+                {{!-- <input type="text" name="livro" placeholder="Título do livro" maxlength="50">                 --}}
             </div>
             <p class="alerta">{{alert}}</p>
             <textarea name="resenha" cols="80" rows="10" maxlength="2500"></textarea>
-            <input class="btn" type="submit" value="Editar"></form>
+            <div class="div_btn">
+                <input class="btn" type="button" value="Buscar">
+                <input class="btn" type="submit" value="Editar"></form>
+            </div>
         </div>
         {{/if}}
+
+        {{#if resVer}}
+        <div class="resenha_ver">
+        <h1>Ver Resenhas</h1>
+        <form action="/painel/{{id}}/resenhas/ver" method="GET">
+            <div id="resPesquisar" class="input_div">                
+                <label>Pesquisar:</label>
+                <input type="text" name="livro" placeholder="Título do livro" maxlength="50">                
+            </div>
+            {{#each resenhas}}
+                {{> resPart}}
+            {{/each}}
+        </form>
+        </div>
+        {{/if}}
+        
     </section>
 
 </section>

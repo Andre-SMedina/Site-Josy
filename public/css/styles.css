@@ -159,8 +159,8 @@ main {
   background-color: rgb(252, 252, 230);
   display: flex;
   justify-content: center;
-  width: 80%;
-  height: 500px;
+  width: 60%;
+  min-height: 500px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -177,9 +177,31 @@ main {
   align-items: center;
   gap: 20px;
 }
+.div_btn {
+  display: flex;
+  gap: 20px;
+}
 #resTit {
-  width: 460px;
-  /* margin-bottom: 30px; */
+  /* width: 460px; */
+  justify-content: center;
+  gap: 20px;
+}
+#resTit select {
+  width: 250px;
+  font-size: 1em;
+  padding: 2px;
+}
+#resPesquisar {
+  width: 500px;
+}
+.resenhasPartial {
+  margin-top: 25px;
+}
+.resenhasPartial p {
+  padding: 10px;
+  line-height: 1.2;
+  text-indent: 15ch;
+  text-align: justify;
 }
 
 /* --------------------------------- FOOTER */

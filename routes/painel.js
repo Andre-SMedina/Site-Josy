@@ -80,4 +80,13 @@ router.post("/:id/resenhas/editar/save", async (req, res) => {
   res.render("painel", { id, name, resEditar, alert });
 });
 
+router.get("/:id/resenhas/ver", async (req, res) => {
+  const resVer = true;
+  const { name, id } = await cadastro(req.params.id);
+  const { livro } = req.body;
+
+  const { resenhas } = await CadModel.findById({ _id: id });
+  res.render("painel", { id, name, resVer, resenhas });
+});
+
 module.exports = router;
