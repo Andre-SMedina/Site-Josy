@@ -60,14 +60,18 @@ router.post("/:id/resenhas/criar/save", async (req, res) => {
 router.get("/:id/resenhas/editar", async (req, res) => {
   const resEditar = true;
   const { name, id } = await cadastro(req.params.id);
-  res.render("painel", { id, name, resEditar });
+  const {resenhas} = await CadModel.findById({_id: id})
+
+  res.render("painel", { id, name, resEditar, resenhas });
 });
 
 router.post("/:id/resenhas/editar/save", async (req, res) => {
   const resEditar = true;
   const { name, id } = await cadastro(req.params.id);
   const { livro, resenha } = req.body;
-  const data = await find(id, livro, false, true);
+  const {resenhas} = await CadModel.findById({_id: id})
+  console.log(req.body);
+/*   const data = await find(id, livro, false, true);
   let alert = data.alert;
 
   if (alert === "encontrado") {
@@ -76,8 +80,8 @@ router.post("/:id/resenhas/editar/save", async (req, res) => {
       { $set: { "resenhas.$.resenha": resenha } }
     );
     alert = "Resenha editada com sucesso!";
-  }
-  res.render("painel", { id, name, resEditar, alert });
+  } */
+  res.render("painel", { id, name, resEditar, resenhas });
 });
 
 router.get("/:id/resenhas/ver", async (req, res) => {
