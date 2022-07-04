@@ -206,6 +206,7 @@ main {
   border: 2px solid red;
   border-radius: 12px;
   text-indent: 15ch;
+  width: 60em;
 }
 .topo {
   border: 2px solid black;
