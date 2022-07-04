@@ -7,7 +7,7 @@ const connectToDatabase = require("./database/connect");
 const { model, models } = require("mongoose");
 const app = express();
 const hbs = exphbs.create({ partialsDir: ["views/partials"] });
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
