@@ -57,6 +57,9 @@ header span {
   border-bottom: 2px solid;
   color: black;
 }
+.auth {
+  display: none;
+}
 
 /* --------------------------------- MAIN */
 
@@ -110,8 +113,9 @@ main {
 }
 /* --------------------------------- MENU */
 
-#painel {
+.resenhas {
   display: flex;
+  position: absolute;
 }
 #menu ul {
   list-style: none;
