@@ -15,7 +15,7 @@
                     <a href="/painel/{{id}}/resenhas/ver"><li>Ver</li></a>
                     <a href="/painel/{{id}}/resenhas/criar"><li>Criar</li></a>
                     <a href="/painel/{{id}}/resenhas/editar"><li>Editar</li></a>
-                    <li>Apagar</li>
+                    <a href="/painel/{{id}}/resenhas/delete"><li>Apagar</li></a>
                 </ul>
             </li>
             <li>Leituras
@@ -59,14 +59,12 @@
                     <option value="{{livro}}">{{livro}}</option>
                     {{/each}}
                 </select>              
-                {{!-- <input type="text" name="livro" placeholder="Título do livro" maxlength="50">                 --}}
             </div>
             <p class="alerta">{{alert}}</p>
             {{#each resenhas}}
             <textarea class="textArea" name="resenha" cols="80" rows="10" maxlength="2500">{{resenha}}</textarea>
             {{/each}}
             <div class="div_btn">
-                <input class="btn" type="button" value="Buscar">
                 <input id="submitRes" class="btn" type="submit" value="Editar"></form>
             </div>
         </div>
@@ -76,15 +74,42 @@
         <div class="resenha_ver">
         <h1>Ver Resenhas</h1>
         <form action="/painel/{{id}}/resenhas/ver" method="GET">
-            <div id="resPesquisar" class="input_div">                
-                <label>Pesquisar:</label>
-                <input type="text" name="livro" placeholder="Título do livro" maxlength="50">                
-            </div>
+            <div id="resTit" class="input_div">  
+                    <label>Selecione o livro:</label>
+                    <select id="selectVer" name="livro" clas="selectResenha">
+                        <option></option>
+                        {{#each resenhas}}
+                            <option value="{{livro}}">{{livro}}</option>
+                        {{/each}}
+                    </select>             
+                </div>
             {{#each resenhas}}
                 {{> resPart}}
             {{/each}}
         </form>
         </div>
+        <a href="#" class="topo"><span>TOPO</span></a> 
+        {{/if}}
+
+        {{#if resDelete}}
+            <div>
+                <h1>Deletar Resenha</h1>
+                <form action="/painel/{{id}}/resenhas/delete/save" method="POST">
+                    <div id="resTit" class="input_div">  
+                        <label>Selecione o livro:</label>
+                        <select id="select" name="livro" clas="selectResenha">
+                            <option></option>
+                            {{#each resenhas}}
+                                <option value="{{livro}}">{{livro}}</option>
+                            {{/each}}
+                        </select>              
+                    </div>
+                    <input class="btn" type="submit" value="Deletar"></form>
+                </form>
+            </div>
+                {{#each resenhas}}
+                    <p class="textArea" id="textDel">{{resenha}}</p>
+                {{/each}}
         {{/if}}
         
     </section>

@@ -9,10 +9,11 @@ body {
   font-size: 18px;
 }
 input {
-  width: 400px;
+  width: 22.1em;
   font-size: 1em;
 }
 textarea {
+  columns: 4em;
   resize: none;
   font-size: 1em;
   padding: 5px;
@@ -64,7 +65,7 @@ main {
 }
 .cadastro {
   padding: 15px 15px 60px;
-  max-width: 500px;
+  max-width: 28em;
   margin: 0 auto;
   background-color: bisque;
 }
@@ -95,12 +96,12 @@ main {
   align-items: center;
   justify-content: center;
   gap: 25px;
-  width: 700px;
+  width: 39em;
   margin: 0 auto;
   padding: 20px;
 }
 .imagens figure {
-  width: 200px;
+  width: 11.5em;
   border: 2px solid;
   box-shadow: 10px 10px 10px black;
 }
@@ -158,8 +159,9 @@ main {
 #conteudo {
   background-color: rgb(252, 252, 230);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 60%;
+  width: 80%;
   min-height: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -173,7 +175,6 @@ main {
 #conteudo form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 20px;
 }
@@ -182,26 +183,40 @@ main {
   gap: 20px;
 }
 #resTit {
-  /* width: 460px; */
   justify-content: center;
   gap: 20px;
 }
 #resTit select {
-  width: 250px;
+  width: 14em;
   font-size: 1em;
   padding: 2px;
 }
-#resPesquisar {
-  width: 500px;
-}
 .resenhasPartial {
   margin-top: 25px;
+  width: 100%;
 }
 .resenhasPartial p {
   padding: 10px;
   line-height: 1.2;
   text-indent: 15ch;
   text-align: justify;
+}
+#textDel {
+  padding: 10px;
+  border: 2px solid red;
+  border-radius: 12px;
+  text-indent: 15ch;
+}
+.topo {
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 15px;
+  font-weight: bold;
+  color: white;
+  position: fixed;
+  right: 0;
+  bottom: 15%;
+  background-color: rgb(71, 71, 187);
 }
 
 /* --------------------------------- FOOTER */
@@ -214,4 +229,32 @@ footer {
   color: white;
   min-height: 70px;
   background-color: black;
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media (max-width: 790px) {
+  body {
+    font-size: 10px;
+  }
+  .topo {
+    padding: 8px;
+  }
+}
+@media (max-width: 560px) {
+  body {
+    font-size: 8px;
+  }
+  .topo {
+    padding: 5px;
+  }
+  .login {
+    flex-direction: column;
+    top: 0;
+    padding: 3px;
+    gap: 3px;
+  }
 }
