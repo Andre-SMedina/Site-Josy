@@ -8,19 +8,45 @@
       href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" href="/img/livro-ico.png">
+    <link rel="shortcut icon" href="/img/livro-ico.png" />
     <title>Paixão por Leitura</title>
   </head>
   <body>
     <header>
-      <img src="/img/livro-ico.png" alt="logo">
+      <img src="/img/livro-ico.png" alt="logo" />
       <a id="linkMain" href="/"><span>Paixão por Leitura</span></a>
       <div class="login">
-          <p id="login_cad"><a href="/user/cadastro">Cadastre-se</a></p>
-          <p id="login_log"><a href="/user/login">Login</a></p>
+        <p id="login_cad"><a href="/user/cadastro">Cadastre-se</a></p>
+        <p id="login_log"><a href="/user/login">Login</a></p>
       </div>
     </header>
-
+    {{#if auth}}
+    <span class="auth">{{name}}</span>
+    <span class="auth">{{id}}</span>
+      <section class="resenhas">
+        <nav id="menu">
+          <ul class="menu_ul1">
+            <li>Resenhas
+              <ul class="menu_ul2">
+                <a href="/resenhas/{{id}}/resenhas/ver"><li>Ver</li></a>
+                <a href="/resenhas/{{id}}/resenhas/criar"><li>Criar</li></a>
+                <a href="/resenhas/{{id}}/resenhas/editar"><li>Editar</li></a>
+                <a href="/resenhas/{{id}}/resenhas/delete"><li>Apagar</li></a>
+              </ul>
+            </li>
+            <li>Leituras
+              <ul class="menu_ul2">
+                <li>Atuais</li>
+                <li>Concluídas</li>
+                <li>Próximas</li>
+              </ul>
+            </li>
+            <li>Desejos</li>
+            <li>Adiquiridos</li>
+          </ul>
+        </nav>
+      </section>
+    {{/if}}
     <main>
       {{{body}}}
     </main>
@@ -29,6 +55,6 @@
       <span>Desenvolvido por André Luís Silva Medina</span>
     </footer>
 
-  <script src="/scripts/main.js"></script>
+    <script src="/scripts/main.js"></script>
   </body>
 </html>
