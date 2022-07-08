@@ -27,5 +27,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`RRodando na porta 3000`);
+  console.log(`Rodando na porta ${port}`);
 });
