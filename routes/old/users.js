@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const CadModel = require("../database/models/cadastro.model");
+const CadModel = require("../models/cadastro");
 
 router.get("/cadastro", (req, res) => {
   res.render("cadastro");

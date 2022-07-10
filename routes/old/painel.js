@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const CadModel = require("../database/models/cadastro.model");
+const CadModel = require("../models/cadastro");
 const auth = true;
 
 router.get("/:id", async (req, res) => {

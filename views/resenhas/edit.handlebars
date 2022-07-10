@@ -1,0 +1,29 @@
+<section id="conteudo">
+  <div class="resenha_criar">
+    <h1>Editar Resenha</h1>
+    <form action="/resenhas/edit" method="POST">
+      <div id="resTit" class="input_div">
+        <label>Livro:</label>
+        <select id="select" name="livro" clas="selectResenha">
+          <option></option>
+          {{#each resenhas}}
+            <option value="{{livro}}">{{livro}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <p class="alerta">{{alert}}</p>
+      {{#each resenhas}}
+        <textarea
+          class="textArea"
+          name="resenha"
+          cols="80"
+          rows="10"
+          maxlength="2500"
+        >{{resenha}}</textarea>
+      {{/each}}
+      <div class="div_btn">
+        <input id="submitRes" class="btn" type="submit" value="Salvar" />
+      </div>
+    </form>
+  </div>
+</section>
