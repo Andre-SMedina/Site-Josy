@@ -3,6 +3,10 @@ const selectVer = document.querySelector("#selectVer");
 const optResVer = document.querySelectorAll(".optResVer");
 const textArea = document.querySelectorAll(".textArea");
 const submit = document.querySelector("#submitRes");
+const fechar = document.querySelector("#close");
+const fmessage = document.querySelector(".fmessage");
+const livros = document.querySelectorAll(".livros");
+const stars = document.querySelectorAll(".star");
 let active = undefined;
 
 for (i of textArea) {
@@ -10,6 +14,14 @@ for (i of textArea) {
 }
 for (i of optResVer) {
   i.id = i.textContent;
+}
+
+console.log(livros[0].children);
+
+if (fechar) {
+  fechar.addEventListener("click", () => {
+    fmessage.style.display = "none";
+  });
 }
 
 if (select) {

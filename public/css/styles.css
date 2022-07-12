@@ -8,15 +8,38 @@
 body {
   font-size: 18px;
 }
-input {
+/* input {
   width: 22.1em;
   font-size: 1em;
-}
+} */
 textarea {
   columns: 4em;
   resize: none;
   font-size: 1em;
   padding: 5px;
+}
+.fmessage {
+  position: absolute;
+  align-items: center;
+  display: flex;
+  padding: 8px 20px;
+  border-radius: 12px;
+  border: 2px solid #000;
+  top: 150px;
+  left: 42%;
+  font-weight: bold;
+  color: white;
+  height: 3em;
+  background-color: red;
+}
+#close {
+  position: relative;
+  left: -35px;
+  top: -15px;
+  background-color: #000;
+  border-radius: 12px;
+  padding: 0 10px;
+  cursor: pointer;
 }
 .input_div {
   font-weight: bold;
@@ -25,37 +48,50 @@ textarea {
   align-items: flex-end;
   justify-content: space-between;
 }
-header {
+.myheader {
   position: relative;
-  padding: 5px 10px 5px;
-  background-color: rgb(145, 232, 232);
-  text-align: center;
+  /* padding: 5px 10px 5px; */
+  background-color: #3090c1;
+  /* text-align: center; */
 }
-header img {
-  position: absolute;
+.myheader img {
+  /* position: absolute;
   left: 40px;
-  top: 0.7em;
+  top: 0.7em; */
   width: 4.1em;
 }
-header span {
-  color: rgb(226, 43, 98);
+.title {
+  text-shadow: 2px 2px 4px #000;
+  color: rgb(202, 54, 98);
   font-family: "Permanent Marker", cursive;
   font-size: 2.9em;
+  white-space: nowrap;
+}
+
+.valid {
+  color: #fff;
 }
 .login {
-  margin-right: 10px;
+  /* margin-right: 10px; */
   font-size: 1.4em;
-  display: flex;
-  gap: 10px;
-  padding: 15px;
-  position: absolute;
-  top: 0.9em;
-  right: 0;
+  /* display: flex; */
+  /* gap: 10px; */
+  /* padding: 15px; */
+  /* position: absolute; */
+  /* top: 0.9em; */
+  /* right: 0; */
 }
 .login a {
   font-weight: bold;
-  border-bottom: 2px solid;
-  color: black;
+}
+.auth {
+  max-width: 500px;
+}
+.bg-drop {
+  background-color: rgb(61, 61, 60);
+}
+.mydropdown {
+  font-size: 1em;
 }
 
 /* --------------------------------- MAIN */
@@ -78,11 +114,6 @@ main {
   display: flex;
   flex-direction: column;
 }
-.btn {
-  margin: 15px auto;
-  padding: 3px;
-  width: 170px;
-}
 .alerta {
   padding: 0 80px;
   color: rgb(255, 255, 255);
@@ -96,63 +127,17 @@ main {
   align-items: center;
   justify-content: center;
   gap: 25px;
-  width: 39em;
+  max-width: 39em;
   margin: 0 auto;
   padding: 20px;
 }
 .imagens figure {
-  width: 11.5em;
+  max-width: 11.5em;
   border: 2px solid;
   box-shadow: 10px 10px 10px black;
 }
 .imagens img {
   width: 100%;
-}
-/* --------------------------------- MENU */
-
-.resenhas {
-  display: flex;
-  position: absolute;
-}
-#menu ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-}
-#menu li {
-  cursor: pointer;
-  color: white;
-  background-color: black;
-  text-align: center;
-  position: relative;
-  border-bottom: 2px solid rgb(255, 255, 255);
-  border-radius: 10px;
-  padding: 10px;
-}
-#menu a {
-  background-color: transparent;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-#menu ul li ul {
-  overflow: hidden;
-  position: absolute;
-  top: 15%;
-  left: 101%;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.2s all ease-in-out;
-}
-#menu ul li ul li {
-  padding: 5px 0px;
-  width: 120px;
-}
-#menu ul li:hover ul {
-  visibility: visible;
-  opacity: 1;
-}
-#menu ul li:hover {
-  background-color: rgb(208, 9, 9);
 }
 
 /* --------------------------------- CONTEUDO */
@@ -162,7 +147,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 80%;
+  width: 70%;
   min-height: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -182,6 +167,9 @@ main {
 .div_btn {
   display: flex;
   gap: 20px;
+}
+.verRes {
+  max-width: 300px;
 }
 #resTit {
   justify-content: center;
@@ -222,6 +210,21 @@ main {
 .topo i:hover {
   color: rgb(85, 46, 205);
 }
+
+/* Leituras */
+.mystyle {
+  width: 70%;
+  background-color: rgb(252, 252, 230);
+}
+.mybtn {
+  margin: 0 auto;
+  display: block;
+  width: 7em;
+  box-shadow: 1px 1px 3px #000;
+}
+.star + .star {
+  margin-left: 1px;
+}
 /* --------------------------------- FOOTER */
 
 footer {
@@ -241,23 +244,14 @@ footer {
 }
 @media (max-width: 790px) {
   body {
-    font-size: 10px;
+    font-size: 12px;
   }
-  .topo {
+  /* .topo {
     padding: 8px;
-  }
+  } */
 }
-@media (max-width: 560px) {
-  body {
-    font-size: 8px;
-  }
-  .topo {
-    padding: 5px;
-  }
-  .login {
-    flex-direction: column;
-    top: 0;
-    padding: 3px;
-    gap: 3px;
+@media (max-width: 450px) {
+  .myheader img {
+    display: none;
   }
 }

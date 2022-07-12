@@ -3,8 +3,13 @@ const mongoose = require("mongoose");
 const cadSchema = new mongoose.Schema({
   name: { type: String },
   email: { type: String },
-  senha: { type: String, minlength: 7 },
+  senha: { type: String },
   resenhas: [],
+  leiturasAtuais: [],
+  leiturasTerminadas: [],
+  leiturasFuturas: [],
+  listaDeDesejos: [],
+  adquiridos: [],
 });
 
 const User = mongoose.model("Resenhas", cadSchema);
