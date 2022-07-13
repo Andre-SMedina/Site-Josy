@@ -4,12 +4,18 @@ const LeiturasController = require("../controllers/LeiturasController");
 const checkAuth = require("../helpers/auth").checkAuth;
 
 router.get("/atuais", checkAuth, LeiturasController.atuais);
-router.post("/atuais/criar", checkAuth, LeiturasController.atuaisCriar);
+router.post("/atuais", checkAuth, LeiturasController.atuaisCriar);
 router.get(
-  "/atuais/:livro/:date",
+  "/atuais/concluir/:livro/:date",
   checkAuth,
   LeiturasController.atuaisConcluir
 );
+router.get(
+  "/atuais/excluir/:livro",
+  checkAuth,
+  LeiturasController.atuaisExcluir
+);
 router.get("/terminadas", checkAuth, LeiturasController.terminadas);
+router.get("/nota/:livro/:nota", checkAuth, LeiturasController.notas);
 
 module.exports = router;

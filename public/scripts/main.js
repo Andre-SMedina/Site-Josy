@@ -5,8 +5,6 @@ const textArea = document.querySelectorAll(".textArea");
 const submit = document.querySelector("#submitRes");
 const fechar = document.querySelector("#close");
 const fmessage = document.querySelector(".fmessage");
-const livros = document.querySelectorAll(".livros");
-const stars = document.querySelectorAll(".star");
 let active = undefined;
 
 for (i of textArea) {
@@ -15,8 +13,6 @@ for (i of textArea) {
 for (i of optResVer) {
   i.id = i.textContent;
 }
-
-console.log(livros[0].children);
 
 if (fechar) {
   fechar.addEventListener("click", () => {
@@ -52,4 +48,61 @@ if (selectVer) {
 
     window.location.href = `#${opcao}`;
   });
+}
+
+// Avaliação Stars
+// const stars = document.querySelectorAll(".star-icon");
+// document.addEventListener("click", function (e) {
+//   const classStar = e.target.classList;
+//   if (!classStar.contains("ativo")) {
+//     stars.forEach(function (star) {
+//       star.classList.remove("ativo");
+//     });
+//     classStar.add("ativo");
+//     console.log(e.target.getAttribute("data-avaliacao"));
+//   }
+// });
+const verif = document.querySelector("#termx");
+if (verif) {
+  document.addEventListener("click", (e) => {
+    const stars = document.querySelectorAll(`.${e.target.classList[0]}`);
+    const nota = parseInt(e.target.getAttribute("data-nota"));
+    stars.forEach((star) => {
+      if (parseInt(star.getAttribute("data-nota")) <= nota) {
+        star.classList.remove("bi-star");
+        star.classList.add("bi-star-fill");
+      }
+      if (parseInt(star.getAttribute("data-nota")) > nota) {
+        star.classList.remove("bi-star-fill");
+        star.classList.add("bi-star");
+      }
+    });
+  });
+
+  const notaBd = document.querySelectorAll("input");
+  // const stars = document.querySelectorAll(".star");
+  let cont = 0;
+  for (const nota of notaBd) {
+    const stars = document.querySelectorAll(
+      `.${nota.getAttribute("data-tit")}`
+    );
+    for (const star of stars) {
+      if (parseInt(star.getAttribute("data-nota")) <= nota.value) {
+        star.classList.remove("bi-star");
+        star.classList.add("bi-star-fill");
+      }
+    }
+  }
+  // notaBd.forEach((nota) => {
+  // notaBd.forEach((nota) => {
+  //   console.log(cont);
+  //   cont++;
+  //   if (nota.getAttribute("data-tit") === star.classList[0]) {
+  //     if (parseInt(star.getAttribute("data-nota")) <= parseInt(nota.value)) {
+  //       star.classList.remove("bi-star");
+  //       star.classList.add("bi-star-fill");
+  //     }
+  //   }
+  // });
+  // });
 }

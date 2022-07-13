@@ -1,15 +1,15 @@
 <section id="conteudo">
     <div>
     <h1>Ver Resenhas</h1>
-        <div class="verRes row">  
-                <label class="p-0">Selecione o livro:</label>
-                <select id="selectVer" name="livro" clas="selectResenha">
-                    <option></option>
-                    {{#each resenhas}}
-                        <option value="{{livro}}">{{livro}}</option>
-                    {{/each}}
-                </select>             
-            </div>
+        <div class=" text-center">  
+            <label class="fw-bold text-primary">Selecione o livro:</label>
+            <select id="selectVer" name="livro" clas="selectResenha">
+                <option></option>
+                {{#each resenhas}}
+                    <option value="{{livro}}">{{livro}}</option>
+                {{/each}}
+            </select>             
+        </div>
         {{#each resenhas}}
             {{> resPart}}
         {{/each}}

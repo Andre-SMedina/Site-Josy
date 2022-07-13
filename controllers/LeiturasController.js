@@ -12,11 +12,11 @@ module.exports = class LeiturasController {
   static async atuaisCriar(req, res) {
     const userId = req.session.userid;
     const { livro, date } = req.body;
-    const { leituras } = await User.findOne({ _id: userId });
+    const { leiturasAtuais } = await User.findOne({ _id: userId });
     let livroFind = false;
 
-    if (leituras) {
-      for (const i of leituras) {
+    if (leiturasAtuais) {
+      for (const i of leiturasAtuais) {
         if (i.livro === livro) {
           livroFind = true;
         }
@@ -33,7 +33,19 @@ module.exports = class LeiturasController {
       return;
     }
     req.flash("message", "Livro já cadastrado");
-    res.render("leituras/atuais");
+
+    res.render("leituras/atuais", { leiturasAtuais });
+  }
+
+  static async atuaisExcluir(req, res) {
+    const userId = req.session.userid;
+    const livro = req.params.livro;
+    await User.findByIdAndUpdate(
+      { _id: userId },
+      { $pull: { leiturasAtuais: { livro: livro } } }
+    );
+
+    res.redirect("/leituras/atuais");
   }
 
   static async atuaisConcluir(req, res) {
@@ -41,7 +53,7 @@ module.exports = class LeiturasController {
     const { livro, date } = req.params;
     const data = new Date();
     const hoje = data.toLocaleDateString();
-    const date2 = date.replace("-", "/");
+    const date2 = date.split("-").join("/");
     await User.findByIdAndUpdate(
       { _id: userId },
       {
@@ -59,7 +71,24 @@ module.exports = class LeiturasController {
 
   static async terminadas(req, res) {
     const userId = req.session.userid;
-    const { leiturasTerminadas } = await User.findOne({ _id: userId });
+    let { leiturasTerminadas } = await User.findOne({ _id: userId });
+    let livros = [];
+    let cont = 0;
+    for (const l of leiturasTerminadas) {
+      livros.push(l);
+      livros[cont].tit = l.livro.split(" ").join("");
+      cont++;
+    }
     res.render("leituras/terminadas", { leiturasTerminadas });
+  }
+  static async notas(req, res) {
+    const userId = req.session.userid;
+    const livro = req.params.livro;
+    const nota = req.params.nota;
+    await User.updateOne(
+      { _id: userId, "leiturasTerminadas.livro": livro },
+      { $set: { "leiturasTerminadas.$.nota": nota } }
+    );
+    res.redirect("/leituras/terminadas");
   }
 };

@@ -168,9 +168,7 @@ main {
   display: flex;
   gap: 20px;
 }
-.verRes {
-  max-width: 300px;
-}
+
 #resTit {
   justify-content: center;
   gap: 20px;
@@ -222,9 +220,13 @@ main {
   width: 7em;
   box-shadow: 1px 1px 3px #000;
 }
-.star + .star {
-  margin-left: 1px;
+.star {
+  color: gold;
 }
+.my-check {
+  font-size: 28px;
+}
+
 /* --------------------------------- FOOTER */
 
 footer {
