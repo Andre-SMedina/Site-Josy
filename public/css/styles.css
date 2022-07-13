@@ -240,9 +240,15 @@ footer {
   body {
     font-size: 12px;
   }
+  #conteudo {
+    width: 80%;
+  }
 }
 @media (max-width: 450px) {
   .myheader img {
     display: none;
+  }
+  #conteudo {
+    width: 100%;
   }
 }
