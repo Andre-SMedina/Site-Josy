@@ -21,11 +21,26 @@ module.exports = class ResenhasController {
   static async createPost(req, res) {
     const userId = req.session.userid;
     const { livro, resenha } = req.body;
-    const livroUpper = upper(livro);
-    await User.findByIdAndUpdate(
-      { _id: userId },
-      { $push: { resenhas: { livro: livroUpper, resenha: resenha } } }
-    );
+    const { resenhas } = await User.findOne({ _id: userId });
+    let livroFind = false;
+
+    if (resenhas) {
+      for (const i of resenhas) {
+        if (i.livro === livro) {
+          livroFind = true;
+        }
+      }
+    }
+    if (!livroFind) {
+      const livroUpper = upper(livro);
+      await User.findByIdAndUpdate(
+        { _id: userId },
+        { $push: { resenhas: { livro: livroUpper, resenha: resenha } } }
+      );
+      res.redirect("/resenhas/create");
+      return;
+    }
+    req.flash("message", "Livro já cadastrado");
     res.render("resenhas/create");
   }
 

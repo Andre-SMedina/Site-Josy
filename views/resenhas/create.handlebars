@@ -1,10 +1,12 @@
 <section id="conteudo">
-  <div class="resenha_criar">
+  <div>
     <h1>Criar Resenha</h1>
-    <form action="/resenhas/create" method="POST">
-      <div id="resTit" class="input_div">
-        <label>Livro:</label>
+    <form class="form-control" action="/resenhas/create" method="POST">
+      <div id="resTit" class="input_div p-2">
+        <label class="form-label">Livro:</label>
         <input
+          class="form-control"
+          id="exampleFormControlInput1"
           type="text"
           name="livro"
           placeholder="Título do livro"
@@ -14,13 +16,19 @@
       </div>
       <p class="alerta">{{alert}}</p>
       <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
         name="resenha"
-        cols="80"
+        cols="40"
         rows="10"
         maxlength="2500"
         placeholder="Insira sua resenha aqui"
       ></textarea>
-      <input class="btn" type="submit" value="Criar" />
+      <input
+        class="mybtn btn btn-primary form-control mb-2"
+        type="submit"
+        value="Criar"
+      />
     </form>
   </div>
 </section>

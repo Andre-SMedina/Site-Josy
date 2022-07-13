@@ -1,83 +1,18 @@
-<section>
-    <section id="conteudo">
-        {{#if resCriar}}
-        <div class="resenha_criar">
-        <h1>Criar Resenha</h1>
-        <form action="/resenhas/{{id}}/resenhas/criar/save" method="POST">
-            <div id="resTit" class="input_div">                
-                <label>Livro:</label>
-                <input type="text" name="livro" placeholder="Título do livro" maxlength="50">
-            </div>
-            <p class="alerta">{{alert}}</p>
-            <textarea name="resenha" cols="80" rows="10" maxlength="2500" placeholder="Insira sua resenha aqui"></textarea>
-            <input class="btn" type="submit" value="Criar">
-        </form>
-        </div>
-        {{/if}}
-        
-        {{#if resEditar}}
-        <div class="resenha_criar">
-        <h1>Editar Resenha</h1>
-        <form action="/resenhas/{{id}}/resenhas/editar/save" method="POST">
-            <div id="resTit" class="input_div">  
-                <label>Livro:</label>
-                <select id="select"  name="livro" clas="selectResenha">
-                    <option></option>
-                    {{#each resenhas}}
-                    <option value="{{livro}}">{{livro}}</option>
-                    {{/each}}
-                </select>              
-            </div>
-            <p class="alerta">{{alert}}</p>
-            {{#each resenhas}}
-            <textarea class="textArea" name="resenha" cols="80" rows="10" maxlength="2500">{{resenha}}</textarea>
-            {{/each}}
-            <div class="div_btn">
-                <input id="submitRes" class="btn" type="submit" value="Salvar"></form>
-            </div>
-        </div>
-        {{/if}}
-
-        
-        <div class="resenha_ver">
-        <h1>Ver Resenhas</h1>
-            <div id="resTit" class="input_div">  
-                    <label>Selecione o livro:</label>
-                    <select id="selectVer" name="livro" clas="selectResenha">
-                        <option></option>
-                        {{#each resenhas}}
-                            <option value="{{livro}}">{{livro}}</option>
-                        {{/each}}
-                    </select>             
-                </div>
-            {{#each resenhas}}
-                {{> resPart}}
-            {{/each}}
-        </div>
-        <a href="#" class="topo"><i class="bi bi-arrow-up-circle-fill"></i></a> 
-        
-
-        {{#if resDelete}}
-            <div>
-                <h1>Deletar Resenha</h1>
-                <form action="/resenhas/{{id}}/resenhas/delete/save" method="POST">
-                    <div id="resTit" class="input_div">  
-                        <label>Selecione o livro:</label>
-                        <select id="select" name="livro" clas="selectResenha">
-                            <option></option>
-                            {{#each resenhas}}
-                                <option value="{{livro}}">{{livro}}</option>
-                            {{/each}}
-                        </select>              
-                    </div>
-                    <input class="btn" type="submit" value="Deletar"></form>
-                </form>
-            </div>
+<section id="conteudo">
+    <div>
+    <h1>Ver Resenhas</h1>
+        <div class=" text-center">  
+            <label class="fw-bold text-primary">Selecione o livro:</label>
+            <select id="selectVer" name="livro" clas="selectResenha">
+                <option></option>
                 {{#each resenhas}}
-                    <p class="textArea" id="textDel">{{resenha}}</p>
+                    <option value="{{livro}}">{{livro}}</option>
                 {{/each}}
-        {{/if}}
-        
-    </section>
-
+            </select>             
+        </div>
+        {{#each resenhas}}
+            {{> resPart}}
+        {{/each}}
+    </div>
+    <a href="#" class="topo"><i class="bi bi-arrow-up-circle-fill"></i></a> 
 </section>

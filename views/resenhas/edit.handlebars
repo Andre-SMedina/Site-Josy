@@ -1,28 +1,33 @@
 <section id="conteudo">
-  <div class="resenha_criar">
+  <div>
     <h1>Editar Resenha</h1>
-    <form action="/resenhas/edit" method="POST">
-      <div id="resTit" class="input_div">
-        <label>Livro:</label>
-        <select id="select" name="livro" clas="selectResenha">
+    <form class="form-control" action="/resenhas/edit" method="POST">
+      <div id="resTit" class="input_div p-3">
+        <label class="form-label">Livro:</label>
+        <select id="select" name="livro">
           <option></option>
           {{#each resenhas}}
             <option value="{{livro}}">{{livro}}</option>
           {{/each}}
         </select>
       </div>
-      <p class="alerta">{{alert}}</p>
       {{#each resenhas}}
         <textarea
-          class="textArea"
+          class="textArea form-control"
+          id="exampleFormControlTextarea1"
           name="resenha"
-          cols="80"
+          cols="40"
           rows="10"
           maxlength="2500"
         >{{resenha}}</textarea>
       {{/each}}
       <div class="div_btn">
-        <input id="submitRes" class="btn" type="submit" value="Salvar" />
+        <input
+          id="submitRes"
+          class="mybtn btn btn-primary mb-2"
+          type="submit"
+          value="Salvar"
+        />
       </div>
     </form>
   </div>

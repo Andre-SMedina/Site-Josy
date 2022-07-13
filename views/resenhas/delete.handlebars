@@ -1,20 +1,20 @@
 <section id="conteudo">
-    <div>
-        <h1>Deletar Resenha</h1>
-        <form action="/resenhas/delete" method="POST">
-            <div id="resTit" class="input_div">  
-                <label>Selecione o livro:</label>
-                <select id="select" name="livro" clas="selectResenha">
-                    <option></option>
-                    {{#each resenhas}}
-                        <option value="{{livro}}">{{livro}}</option>
-                    {{/each}}
-                </select>              
-            </div>
-            <input class="btn" type="submit" value="Deletar"></form>
-        </form>
-    </div>
-    {{#each resenhas}}
-        <p class="textArea" id="textDel">{{resenha}}</p>
-    {{/each}}
+  <div>
+    <h1>Deletar Resenha</h1>
+    <form action="/resenhas/delete" method="POST">
+      <div class="row">
+        <label class="p-0">Selecione o livro:</label>
+        <select id="select" name="livro" clas="selectResenha">
+          <option></option>
+          {{#each resenhas}}
+            <option value="{{livro}}">{{livro}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <input class="mybtn btn btn-primary" type="submit" value="Deletar" />
+    </form>
+  </div>
+  {{#each resenhas}}
+    <p class="textArea mt-3" id="textDel">{{resenha}}</p>
+  {{/each}}
 </section>

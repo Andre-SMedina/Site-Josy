@@ -1,27 +1,35 @@
-<section class="cadastro">
-  <h2>Login</h2>
+<div class="container bg-info p-3 auth mt-4 rounded border border-dark shadow">
+  <p class="h2 text-center fw-bold">Tela de Login</p>
   <form action="/auth/login" method="POST">
-    <div class="input_div">
-      <label>E-mail:</label>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="m-0 form-label">Email</label>
       <input
-        type="email"
-        name="email"
         placeholder="Digite seu e-mail"
+        name="email"
+        type="email"
+        class="form-control border border-dark"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
         maxlength="40"
         required
       />
     </div>
-    <div class="input_div">
-      <label>Senha:</label>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="m-0 form-label">Senha</label>
       <input
-        type="password"
-        name="senha"
         placeholder="Digite sua senha"
+        name="senha"
+        type="password"
+        class="form-control border border-dark"
+        id="exampleInputPassword1"
         maxlength="15"
         required
       />
     </div>
-    <input class="btn" type="submit" value="Entrar" />
-    <p class="alerta">{{alert}}</p>
+    <button
+      type="submit"
+      class="mybtn btn btn-primary border border-dark mb-3"
+    >Entrar</button>
   </form>
-</section>
+  <p class="alerta rounded">{{alert}}</p>
+</div>

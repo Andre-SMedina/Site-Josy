@@ -1,0 +1,30 @@
+<div class="mystyle container border border-dark">
+  <form action="/livros/wishlist" method="post">
+    <div class="row">
+      <span class="h2 text-center">Lista de desejos</span>
+      <div class="p-2 col">
+        <label class="text-center d-block">Título: </label>
+        <input
+          class="mywid mx-auto form-control"
+          type="text"
+          name="livro"
+          placeholder="Ex: título - autor - editora - ano"
+          required
+        />
+      </div>
+    </div>
+    <input class="mybtn btn btn-primary mt-1" type="submit" value="Cadastrar" />
+  </form>
+  <div class="mt-5 conatiner">
+    <ol class="ps-0">
+      {{#each listaDeDesejos}}
+        <div class="container row align-items-center">
+          <a class="col-1 mb-2" href="/livros/wishlist/{{livro}}"><i
+              class="text-danger bi bi-trash3-fill"
+            ></i></a>
+          <li class="col ms-4 mb-2 fonte1">{{livro}}</li>
+        </div>
+      {{/each}}
+    </ol>
+  </div>
+</div>

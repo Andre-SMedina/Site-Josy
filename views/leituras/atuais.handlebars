@@ -1,0 +1,47 @@
+<div class="mystyle container border border-dark">
+  <form action="/leituras/atuais" method="post">
+    <div class="row">
+      <span class="h2 text-center">Leituras Atuais</span>
+      <div class="p-2 col">
+        <label>Título: </label>
+        <input class="form-control" type="text" name="livro" placeholder="Ex: título - autor - editora - ano" required />
+      </div>
+      <div class="p-2 col">
+        <label>Início: </label>
+        <input class="form-control" type="date" name="date" required />
+      </div>
+    </div>
+    <input class="mybtn btn btn-primary mt-1" type="submit" value="Cadastrar" />
+  </form>
+  <div class="row mt-3">
+    <div class="col-4">
+      <h4>Livro</h4>
+    </div>
+    <div class="col-2">
+      <h4>Início</h4>
+    </div>
+    <div class="ms-4 col-2 text-end">
+      <h4>Excluir</h4>
+    </div>
+    <div class="col text-end">
+      <h4>Concluir</h4>
+    </div>
+  </div>
+  <hr class="my-2" />
+  {{#each leiturasAtuais}}
+    <div class="row">
+      <div class="col-4">
+        <p>{{livro}}</p>
+      </div>
+      <div class="col-2">
+        <p>{{date}}</p>
+      </div>
+      <div class="col-2 text-end">
+        <a href='/leituras/atuais/excluir/{{livro}}'><i class="text-danger bi bi-trash3-fill"></a></i>
+      </div>
+      <div class="col text-end">
+        <a href='/leituras/atuais/concluir/{{livro}}/{{date}}'><i class="my-check me-4 bi bi-check2 ts-5"></a></i>
+      </div>
+    </div>
+  {{/each}}
+</div>
