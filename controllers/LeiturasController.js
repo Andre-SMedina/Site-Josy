@@ -13,17 +13,17 @@ module.exports = class LeiturasController {
     const userId = req.session.userid;
     const { livro, date } = req.body;
     const { leiturasAtuais } = await User.findOne({ _id: userId });
+    const livroUpper = upper(livro);
     let livroFind = false;
 
     if (leiturasAtuais) {
       for (const i of leiturasAtuais) {
-        if (i.livro === livro) {
+        if (i.livro === livroUpper) {
           livroFind = true;
         }
       }
     }
     if (!livroFind) {
-      const livroUpper = upper(livro);
       const dataBr = date.split("-").reverse().join("-");
       await User.findByIdAndUpdate(
         { _id: userId },

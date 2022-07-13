@@ -3,18 +3,18 @@
     <h1>Editar Resenha</h1>
     <form class="form-control" action="/resenhas/edit" method="POST">
       <div id="resTit" class="input_div p-3">
-        <label>Livro:</label>
-        <select id="select" name="livro" clas="selectResenha">
+        <label class="form-label">Livro:</label>
+        <select id="select" name="livro">
           <option></option>
           {{#each resenhas}}
             <option value="{{livro}}">{{livro}}</option>
           {{/each}}
         </select>
       </div>
-      <p class="alerta">{{alert}}</p>
       {{#each resenhas}}
         <textarea
-          class="textArea"
+          class="textArea form-control"
+          id="exampleFormControlTextarea1"
           name="resenha"
           cols="40"
           rows="10"

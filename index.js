@@ -14,6 +14,7 @@ const homeRoutes = require("./routes/homeRoutes");
 const authRoutes = require("./routes/authRoutes");
 const resenhasRoutes = require("./routes/resenhasRoutes");
 const leiturasRoutes = require("./routes/leiturasRoutes");
+const livrosRoutes = require("./routes/livrosRoutes");
 
 //Import Controller para rota depois da sessão iniciada
 const homeController = require("./controllers/HomeController");
@@ -60,6 +61,7 @@ app.use("/", homeRoutes);
 app.use("/auth", authRoutes);
 app.use("/resenhas", resenhasRoutes);
 app.use("/leituras", leiturasRoutes);
+app.use("/livros", livrosRoutes);
 
 //Rota depois da sessão ativa
 app.use("/", homeController.home);

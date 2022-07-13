@@ -8,10 +8,6 @@
 body {
   font-size: 18px;
 }
-/* input {
-  width: 22.1em;
-  font-size: 1em;
-} */
 textarea {
   columns: 4em;
   resize: none;
@@ -50,14 +46,9 @@ textarea {
 }
 .myheader {
   position: relative;
-  /* padding: 5px 10px 5px; */
   background-color: #3090c1;
-  /* text-align: center; */
 }
 .myheader img {
-  /* position: absolute;
-  left: 40px;
-  top: 0.7em; */
   width: 4.1em;
 }
 .title {
@@ -72,14 +63,7 @@ textarea {
   color: #fff;
 }
 .login {
-  /* margin-right: 10px; */
   font-size: 1.4em;
-  /* display: flex; */
-  /* gap: 10px; */
-  /* padding: 15px; */
-  /* position: absolute; */
-  /* top: 0.9em; */
-  /* right: 0; */
 }
 .login a {
   font-weight: bold;
@@ -174,7 +158,6 @@ main {
   gap: 20px;
 }
 #resTit select {
-  width: 14em;
   font-size: 1em;
   padding: 2px;
 }
@@ -226,6 +209,15 @@ main {
 .my-check {
   font-size: 28px;
 }
+.mywid {
+  max-width: 400px;
+}
+.fonte1 {
+  color: #000;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 0px 1px 2px rgb(213, 55, 44);
+}
 
 /* --------------------------------- FOOTER */
 
@@ -248,9 +240,6 @@ footer {
   body {
     font-size: 12px;
   }
-  /* .topo {
-    padding: 8px;
-  } */
 }
 @media (max-width: 450px) {
   .myheader img {

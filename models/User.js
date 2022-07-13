@@ -7,7 +7,6 @@ const cadSchema = new mongoose.Schema({
   resenhas: [],
   leiturasAtuais: [],
   leiturasTerminadas: [],
-  leiturasFuturas: [],
   listaDeDesejos: [],
   adquiridos: [],
 });
