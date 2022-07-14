@@ -263,4 +263,10 @@ footer {
   .mystyle {
     width: 100%;
   }
+  .poscel {
+    top: 38px;
+  }
+  .btncel {
+    padding: 2px 5px;
+  }
 }
