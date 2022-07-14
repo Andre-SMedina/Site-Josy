@@ -243,12 +243,24 @@ footer {
   #conteudo {
     width: 80%;
   }
+  h4 {
+    font-size: 1.4em;
+  }
+  .mystyle {
+    width: 100%;
+  }
 }
 @media (max-width: 450px) {
   .myheader img {
     display: none;
   }
   #conteudo {
+    width: 100%;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
+  .mystyle {
     width: 100%;
   }
 }

@@ -2,7 +2,7 @@
   <form action="/leituras/atuais" method="post">
     <div class="row">
       <span class="h2 text-center">Leituras Atuais</span>
-      <div class="p-2 col">
+      <div class="p-2 col-sm">
         <label>Título: </label>
         <input class="form-control" type="text" name="livro" placeholder="Ex: título - autor - editora - ano" required />
       </div>
@@ -14,13 +14,13 @@
     <input class="mybtn btn btn-primary mt-1" type="submit" value="Cadastrar" />
   </form>
   <div class="row mt-3">
-    <div class="col-4">
+    <div class="col">
       <h4>Livro</h4>
     </div>
-    <div class="col-2">
+    <div class="col">
       <h4>Início</h4>
     </div>
-    <div class="ms-4 col-2 text-end">
+    <div class=" col text-end">
       <h4>Excluir</h4>
     </div>
     <div class="col text-end">
@@ -30,13 +30,13 @@
   <hr class="my-2" />
   {{#each leiturasAtuais}}
     <div class="row">
-      <div class="col-4">
+      <div class="col">
         <p>{{livro}}</p>
       </div>
-      <div class="col-2">
+      <div class="col">
         <p>{{date}}</p>
       </div>
-      <div class="col-2 text-end">
+      <div class="col text-end">
         <a href='/leituras/atuais/excluir/{{livro}}'><i class="text-danger bi bi-trash3-fill"></a></i>
       </div>
       <div class="col text-end">
